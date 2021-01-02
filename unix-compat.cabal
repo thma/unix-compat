@@ -1,5 +1,5 @@
 name:           unix-compat
-version:        0.5.2
+version:        0.5.2-thma-edit
 synopsis:       Portable POSIX-compatibility layer.
 description:    This package provides portable implementations of parts
                 of the unix package. This package re-exports the unix
@@ -30,6 +30,7 @@ Library
 
   exposed-modules:
     System.PosixCompat
+    System.PosixCompat.Directory
     System.PosixCompat.Extensions
     System.PosixCompat.Files
     System.PosixCompat.Temp
@@ -37,6 +38,9 @@ Library
     System.PosixCompat.Types
     System.PosixCompat.Unistd
     System.PosixCompat.User
+    System.PosixCompat.Signals
+    System.PosixCompat.Process
+    System.PosixCompat.Resource
 
   if os(windows)
     c-sources:

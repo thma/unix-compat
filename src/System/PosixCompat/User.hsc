@@ -51,6 +51,7 @@ getAllUserEntries = return []
 
 import System.IO.Error
 import System.PosixCompat.Types
+import System.Environment
 
 unsupported :: String -> IO a
 unsupported f = ioError $ mkIOError illegalOperationErrorType x Nothing Nothing
@@ -60,7 +61,11 @@ unsupported f = ioError $ mkIOError illegalOperationErrorType x Nothing Nothing
 -- User environment
 
 getRealUserID :: IO UserID
-getRealUserID = unsupported "getRealUserID"
+getRealUserID = do -- unsupported "getRealUserID"
+    maybeUserID <- lookupEnv "UID"
+    case maybeUserID of
+      Nothing     -> return 123456
+      Just userID -> return $ read userID
 
 getRealGroupID :: IO GroupID
 getRealGroupID = unsupported "getRealGroupID"

@@ -12,6 +12,12 @@ module System.PosixCompat (
     , module System.PosixCompat.Types
     , module System.PosixCompat.Unistd
     , module System.PosixCompat.User
+
+    , module System.PosixCompat.Directory
+    , module System.PosixCompat.Process
+    , module System.PosixCompat.Resource
+    , module System.PosixCompat.Signals
+
     , usingPortableImpl
     ) where
 
@@ -21,6 +27,12 @@ import System.PosixCompat.Time
 import System.PosixCompat.Types
 import System.PosixCompat.Unistd
 import System.PosixCompat.User
+
+import System.PosixCompat.Directory
+import System.PosixCompat.Process
+import System.PosixCompat.Resource
+import System.PosixCompat.Signals
+
 
 -- | 'True' if unix-compat is using its portable implementation,
 --   or 'False' if the unix package is simply being re-exported.
